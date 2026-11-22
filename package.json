@@ -19,9 +19,11 @@
   "node": "22.x"
 },
 
+
+
 "scripts": {
   "dev": "node -r ./slowbuffer-shim.js ./node_modules/next/dist/bin/next dev -p 3000 -H 0.0.0.0",
-  "build": "node -e \"process.env.NODE_OPTIONS = (process.env.NODE_OPTIONS || '') + ' --require ./slowbuffer-shim.js'; require('./node_modules/next/dist/bin/next')\"",
+  "build": "next build",
   "start": "node -r ./slowbuffer-shim.js ./node_modules/next/dist/bin/next start",
   "lint": "next lint"
 },
