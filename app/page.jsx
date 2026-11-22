@@ -25,6 +25,7 @@ import {
   X,
 } from "lucide-react";
 import { useAuthUser } from "@/app/lib/authClient";
+// import { useAuthUser } from "@/app/lib/authClient";
 import Avatar from "@/app/Components/Avatar";
 
 const ROOM_TYPE_FILTERS = [

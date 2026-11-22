@@ -7,13 +7,14 @@ const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 module.exports = (phase) => ({
   output: "standalone",
   distDir: phase === PHASE_DEVELOPMENT_SERVER ? ".next-dev" : ".next",
+  experimental: {
+    serverComponentsExternalPackages: ["jsonwebtoken", "bcryptjs", "mongoose"],
+  },
   webpack: (config) => {
     config.resolve = {
       ...config.resolve,
       fallback: {
         fs: false,
-        //         path: false,
-        //         os: false,
         net: false,
       },
     };

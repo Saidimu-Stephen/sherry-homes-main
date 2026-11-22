@@ -1,5 +1,6 @@
-/** @format */
 "use client";
+/** @format */
+
 
 import { useCallback, useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
@@ -7,7 +8,7 @@ import { useSession, signOut } from "next-auth/react";
 const AUTH_EVENT = "sherry-auth-change";
 const STUDIO_EVENT = "sherry-studio-auth-change";
 export const LAST_ACTIVITY_KEY = "sherry_last_activity";
-export const INACTIVITY_TIMEOUT_MS = 2 * 60 * 1000; // 2 minutes
+export const INACTIVITY_TIMEOUT_MS = 5 * 60 * 1000; // 5 minutes
 export const INACTIVITY_WARNING_MS = 30 * 1000; // Show warning in final 30 seconds
 
 export function getLastActivity() {

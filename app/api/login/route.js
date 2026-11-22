@@ -1,5 +1,11 @@
 /** @format */
 
+const buffer = require("buffer");
+if (!buffer.SlowBuffer) buffer.SlowBuffer = buffer.Buffer;
+
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+// ... rest of your next.config.js
+
 import connectDB from "@/app/lib/mongodb";
 import { getStore } from "@/app/lib/store";
 import { passwordOverrides } from "@/app/lib/resetTokens";
