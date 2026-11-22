@@ -13,14 +13,18 @@
   "directories": {
     "lib": "lib"
   },
-  "scripts": {
-    "dev": "node -r ./slowbuffer-shim.js ./node_modules/next/dist/bin/next dev -p 3000 -H 0.0.0.0",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
 
 
+"engines": {
+  "node": "22.x"
+},
+
+"scripts": {
+  "dev": "node -r ./slowbuffer-shim.js ./node_modules/next/dist/bin/next dev -p 3000 -H 0.0.0.0",
+  "build": "node -e \"process.env.NODE_OPTIONS = (process.env.NODE_OPTIONS || '') + ' --require ./slowbuffer-shim.js'; require('./node_modules/next/dist/bin/next')\"",
+  "start": "node -r ./slowbuffer-shim.js ./node_modules/next/dist/bin/next start",
+  "lint": "next lint"
+},
 
   "dependencies": {
     "@emotion/react": "^11.11.4",
