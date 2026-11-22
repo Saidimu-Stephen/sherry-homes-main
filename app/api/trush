@@ -1,0 +1,33 @@
+/** @format */
+
+import { GoogleLogin } from "react-google-login";
+
+function GoogleRegister() {
+  const handleGoogleLoginSuccess = (response) => {
+    console.log("Google login successful", response);
+    // Handle the successful Google login response here...
+  };
+
+  const handleGoogleLoginFailure = (error) => {
+    console.error("Google login failed", error);
+    // Handle the Google login failure here...
+  };
+
+  return (
+    <div>
+      {/* Your content */}
+      <h1>Register with Google</h1>
+
+      {/* Google Login button */}
+      <GoogleLogin
+        clientId="YOUR_CLIENT_ID_FROM_GOOGLE"
+        buttonText="Continue with Google"
+        onSuccess={handleGoogleLoginSuccess}
+        onFailure={handleGoogleLoginFailure}
+        cookiePolicy={"single_host_origin"}
+      />
+    </div>
+  );
+}
+
+export default GoogleRegister;
